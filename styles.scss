@@ -16,6 +16,22 @@ body {
    font-weight: $font-weight;
    font-style: $font-style;
 }
+
+#scroll-percent {
+   position: fixed;
+   top: 0;
+   width: 100vw;
+   color: #000;
+   margin: 0;
+   padding: 0;
+}
+
+[data-scrollPercentage] .percentage {
+  display: inline-block;
+  background-color: #08A6E4;
+  height: 6px;
+  width: 0;
+}
 @media screen and (max-width: 999px){
    .line{
       display: none;
@@ -52,7 +68,7 @@ body {
       display: none;
       position: absolute;
       align-items: flex-start;
-      width: 100%;
+      width: 95%;
    }
    &__links{
       color:#A5A5A5;
