@@ -1,8 +1,13 @@
+// Responsive NavBar
+
 function buttonClick() {
   let navbar = document.getElementById('nav-bar');
   let responsive_class_name = 'responsive'
   navbar.classList.toggle(responsive_class_name)
 }
+
+//  Scroll Percentage Bar 
+
 const updateScrollPercentage = function() { 
   const heightOfWindow = window.innerHeight,
     contentScrolled = window.pageYOffset,
@@ -22,3 +27,14 @@ const updateScrollPercentage = function() {
 }
 
 window.addEventListener('scroll', updateScrollPercentage)
+
+// Button to the Top
+const backToTopButton = document.querySelector(".btn__top")
+
+backToTopButton.addEventListener('click', function () {
+  setTimeout(function() {
+    document.body.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, 200)
+});

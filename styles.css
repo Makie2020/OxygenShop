@@ -221,6 +221,12 @@ body {
   border-radius: 35px;
   width: 226px;
 }
+.btn__top {
+  background: #08A6E4;
+  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+  border-radius: 35px;
+  margin-bottom: 2%;
+}
 
 @media screen and (min-width: 1000px) {
   .btn__openShop {
