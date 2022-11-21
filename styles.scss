@@ -36,51 +36,87 @@ body {
 }
 
 .nav {
-   padding: 17px 0px 16px 25px;
+   padding: 1.3rem;
    line-height: 37px;
    box-shadow: 0px 3px 6px 0px #0000004A;
-   display:flex;
+   display: flex;
    justify-content: space-between;
-   padding: 35px 115px 35px 115px;
    &__title {
       font-weight: 300;
       font-size: 32px;
       line-height: 37px;
       color: #08A6E4;
    }
+   &__bar {
+      color: #08A6E4;
+      display: none;
+      position: absolute;
+      align-items: flex-start;
+      width: 100%;
+   }
    &__links{
-      overflow: hidden;
-      &__a{
-         color:#A5A5A5;
-         text-align: left;
-         letter-spacing: 3.28px;
-         text-decoration: none;
-         float: left;
-         display: block;
-         margin-left: 60px;
-         margin-top: 10px;
-         font-weight: 700;
-         font-size: 11px;
-         line-height: 15px;
-      }
+      color:#A5A5A5;
+      text-align: left;
+      letter-spacing: 3.28px;
+      font-weight: 700;
+      font-size: 11px;
+      line-height: 15px;
+      padding: 1.3rem;
+      display: flex;
+      flex-direction: column;
+
    }
    &__icon{
       color:  #07ACE6;
-      margin-right: 30px;
+      margin-top: 1%;
+      display: block;
    }
    &__active {
       color: black;
    }
 }
+@media screen and (max-width: 999px) {
+   .nav {
+      box-shadow: none;
+   }
+   .nav__bar {
+      display: none;
+      position: absolute;
+      top: 3.7rem;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      text-align: center;
+      box-shadow: 6px 6px 6px 0px #0000004A;
+  }
+   .nav__bar.responsive {
+      display: block;
+   }
+   .nav-bar a {
+      display: block;
+   }
+   .nav__icon {
+      display: block;
+      z-index: 1;
+   }
+}
 
 @media screen and (min-width: 1000px) {
    .nav {
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
       &__title{
          padding-left: 8%;
       }
-      &__a {
-         margin-right: 50px;
-         margin-top: 12.5px;
+      &__bar{
+         display: flex;
+         flex-direction: row;
+         justify-content: flex-end;
+         gap: 3rem;
+         padding-right: 4%;
+      }
+      &__links {
          font-size: 11px;
          line-height: 15px;
          letter-spacing: 3.28px;
@@ -89,6 +125,12 @@ body {
          color: #000000;
          border-bottom: #08A6E4;;
       }
+      &__icon {
+         display: none;
+      }
+   }
+   #nav_icon {
+      display: none;
    }
 }
 @media screen and (max-width: 999px) {
@@ -98,7 +140,12 @@ body {
    .icon_navbar {
       color: #07ACE6;
    }
-}
+   .mobile {
+      &__navLinks{
+         color: #08A6E4;
+      }
+   }  
+}   
 
 @media screen and (min-width: 1000px) {
    .mobile {

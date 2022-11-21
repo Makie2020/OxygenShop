@@ -31,12 +31,11 @@ body {
   }
 }
 .nav {
-  padding: 17px 0px 16px 25px;
+  padding: 1.3rem;
   line-height: 37px;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2901960784);
   display: flex;
   justify-content: space-between;
-  padding: 35px 115px 35px 115px;
 }
 .nav__title {
   font-weight: 300;
@@ -44,37 +43,75 @@ body {
   line-height: 37px;
   color: #08A6E4;
 }
-.nav__links {
-  overflow: hidden;
+.nav__bar {
+  color: #08A6E4;
+  display: none;
+  position: absolute;
+  align-items: flex-start;
+  width: 100%;
 }
-.nav__links__a {
+.nav__links {
   color: #A5A5A5;
   text-align: left;
   letter-spacing: 3.28px;
-  text-decoration: none;
-  float: left;
-  display: block;
-  margin-left: 60px;
-  margin-top: 10px;
   font-weight: 700;
   font-size: 11px;
   line-height: 15px;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
 }
 .nav__icon {
   color: #07ACE6;
-  margin-right: 30px;
+  margin-top: 1%;
+  display: block;
 }
 .nav__active {
   color: black;
 }
 
+@media screen and (max-width: 999px) {
+  .nav {
+    box-shadow: none;
+  }
+  .nav__bar {
+    display: none;
+    position: absolute;
+    top: 3.7rem;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.2901960784);
+  }
+  .nav__bar.responsive {
+    display: block;
+  }
+  .nav-bar a {
+    display: block;
+  }
+  .nav__icon {
+    display: block;
+    z-index: 1;
+  }
+}
 @media screen and (min-width: 1000px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .nav__title {
     padding-left: 8%;
   }
-  .nav__a {
-    margin-right: 50px;
-    margin-top: 12.5px;
+  .nav__bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 3rem;
+    padding-right: 4%;
+  }
+  .nav__links {
     font-size: 11px;
     line-height: 15px;
     letter-spacing: 3.28px;
@@ -83,6 +120,12 @@ body {
     color: #000000;
     border-bottom: #08A6E4;
   }
+  .nav__icon {
+    display: none;
+  }
+  #nav_icon {
+    display: none;
+  }
 }
 @media screen and (max-width: 999px) {
   .desktop {
@@ -90,6 +133,9 @@ body {
   }
   .icon_navbar {
     color: #07ACE6;
+  }
+  .mobile__navLinks {
+    color: #08A6E4;
   }
 }
 @media screen and (min-width: 1000px) {

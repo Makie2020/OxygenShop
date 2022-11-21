@@ -8,21 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   </head>
   <body>
     <nav class="nav">
-      <h2 class="nav__title">OXYGENShop</h2>
-      <div class="desktop">
-        <div class="nav__links">
-          <a href="#why" class=" nav__links__a nav__active">WHY US</a>
-          <a href="#benefits" class="nav__links__a">BENEFITS</a>
-          <a href="#prices" class="nav__links__a">PRICES</a>
-          <a href="#contact" class="nav__links__a">CONTACT</a>    
-        </div>
-      </div>
-      <div class="mobile">  
-        <p class="icon_navbar">&#9776;</p>
+      <h2 class="nav__title">OXYGENShop</h2> 
+      <a id="menu-icon" class="nav__icon" onclick="buttonClick()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <div class="nav__bar" id="nav-bar">
+          <a href="#why" class="nav__links nav__active">WHY US</a>
+          <a href="#benefits" class="nav__links">BENEFITS</a>
+          <a href="#prices" class="nav__links">PRICES</a>
+          <a href="#contact" class="nav__links">CONTACT</a>
       </div>
     </nav>
     <main>
@@ -166,5 +164,6 @@
         <img class="footer__columnTwo__img" src="./images/Facebook.png" alt="Icon of Facebook"/>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
