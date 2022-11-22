@@ -8,6 +8,7 @@ $font-style: normal;
    box-sizing: border-box;
    margin: 0;
    padding: 0;
+   scroll-behavior: smooth;
 }
 body {
    font: 100% $font-stack;
@@ -39,7 +40,7 @@ body {
 }
 @media screen and (min-width: 1000px) {
    .line{
-      width: 327px;
+      width: 330px;
       border-top: 2px solid  #FB3B64;
       margin-top: 50px;
       &__second{
@@ -53,10 +54,13 @@ body {
 
 .nav {
    padding: 1.3rem;
+	position: sticky;
+	top: 0px;
    line-height: 37px;
    box-shadow: 0px 3px 6px 0px #0000004A;
    display: flex;
    justify-content: space-between;
+   background-color: #FFFFFF;
    &__title {
       font-weight: 300;
       font-size: 32px;
@@ -563,11 +567,10 @@ body {
 
       &__input{
          border: 0;
-         outline: 0;
-         background: transparent;
          border-bottom: 1px solid #95989A;
          width: 90%;
          height: 42px;
+         margin-bottom: 10px;
       }
       &__label {
          font-family: 'Open Sans';
@@ -579,11 +582,9 @@ body {
       }
    }
    &__checkbox {
-      display: inline-block;
+      display: flex;
       padding-top: 30px;
-      &__img{
-         vertical-align:top; 
-      }
+      margin-bottom: 2%;
       &__p {
          font-family: 'Open Sans';
          font-size: 12px;
@@ -592,9 +593,11 @@ body {
          width: 80%;
          display: inline-block;
          letter-spacing: 0px;
+         margin-left: 2%;
       }
    }
 }
+
 @media screen and (min-width: 1000px) {
    .question{
       display: flex;
@@ -620,11 +623,10 @@ body {
          display: inline-block;
          margin-top: 15px;
       }
-      &__div{
-         min-width: 40%;
-      }
+
    }
 }   
+
 .footer {
    padding-left: 17px;
    background: #F7F7F7;
@@ -663,3 +665,15 @@ body {
    }
 }
 
+.form-field.error input {
+   border-color: #dc3545;
+   margin-top: 10px;
+}
+
+.form-field.success input {
+   border-color: #28a745;
+}
+
+.form-field small {
+   color: #dc3545;
+}

@@ -25,7 +25,7 @@
       </div>
     </nav>
     <main>
-      <section class="card">
+      <section class="card" id="why">
         <h1 class="card__name">Sell More!</h1>
         <p class="card__info">Open shop on our platform and increase your sales</p>
         <button class="btn btn__openShop">Open your shop</button>
@@ -34,7 +34,7 @@
         <img src="./images/Background 1.png" class="image image__laptopmobile"/>
         <img src="./images/Background100px.png" class="image image__laptopdesktop"/>
       </div>
-      <section class="data">
+      <section class="data" id="benefits">
         <h2 class="data__title">The most popular sales platform in country</h2>
         <div class="data__info">
           <img src="./images/daily entries.png" class="data__info__data"/>
@@ -70,7 +70,7 @@
             </div>
         </div>
       </section>
-      <section class="pricing">
+      <section class="pricing" id="prices">
         <h2 class="pricing__title">Pricing</h2>
         <div class="pricing__div">
           <div class="pricing__card">
@@ -125,7 +125,7 @@
           </div>
         </div>
       </section>
-      <section class="question">
+      <section class="question" id="contact">
         <div class="question__div">
           <h2 class="question__title">Any questions?</h2>
           <p class="question__p">Leave your email address or call us!</p>
@@ -139,19 +139,31 @@
           </div>
         </div>
         <div class="question__div2">
-          <form class="question__form">
-            <label class="question__form__label">NAME<label><br>
-            <input type="text" class="question__form__input" name="name"><br>
-            <label class="question__form__label">EMAIL</label><br>
-            <input type="text" class="question__form__input" name="mail">
-          </form>
-          <div class="question__checkbox">
-            <img class="question__checkbox__img" src="./images/CheckboxBlue.png"/>
-            <p class="question__checkbox__p">I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s
-               and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data 
-               and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</p>
-          </div>
-          <button class="btn btn__send">Send</button>
+          <form id="form" class="form question__form">
+            <div class="form-field">
+                <label class ="question__form__label" for="name"></label>
+                <input type="text" class="question__form__input" name="name" id="name" autocomplete="off" placeholder="Name"/><br>
+                <small></small>
+            </div>
+            <div class="form-field">
+                <label  class="question__form__label" for="Email"></label>
+                <input type="text" class="question__form__input" name="email" id="email" autocomplete="off" placeholder="Enter your email"/><br>
+                <small></small>
+            </div>
+            <div class="question__checkbox">
+              <div class="checkbox">
+                <input name="checkbox" id="checkbox" type="checkbox" class="checkbox__input">
+                <label for="checkbox"></label>
+                <small></small> 
+              </div>
+              <p class="question__checkbox__p">I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s
+                and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data 
+                and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</p>
+            </div>
+            <div class="form-field">
+              <input type="submit" value="submit" class="btn btn__send submit" id="btn__submit">
+            </div> 
+          </form>  
         </div> 
       </section>
       <button class="btn btn__top btn__hidden">Return to the top</button>
@@ -167,5 +179,6 @@
       </div>
     </footer>
     <script src="index.js"></script>
+    <script src="validation.js"></script>
   </body>
 </html>
