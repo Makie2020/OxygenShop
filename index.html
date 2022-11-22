@@ -146,11 +146,11 @@
                 <small></small>
             </div>
             <div class="form-field">
-                <label  class="question__form__label" for="Email"></label>
+                <label  class="question__form__label" for="email"></label>
                 <input type="text" class="question__form__input" name="email" id="email" autocomplete="off" placeholder="Enter your email"/><br>
                 <small></small>
             </div>
-            <div class="question__checkbox">
+            <div class="question__checkbox form-field">
               <div class="checkbox">
                 <input name="checkbox" id="checkbox" type="checkbox" class="checkbox__input">
                 <label for="checkbox"></label>
@@ -161,12 +161,12 @@
                 and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</p>
             </div>
             <div class="form-field">
-              <input type="submit" value="submit" class="btn btn__send submit" id="btn__submit">
+              <input type="submit" value="Send" class="btn btn__send submit" id="btn__submit">
             </div> 
           </form>  
         </div> 
       </section>
-      <button class="btn btn__top btn__hidden">Return to the top</button>
+      <button class="btn btn__top btn__hidden">^</button>
     </main>
     <footer class="footer">
       <div class="footer__columnOne">
@@ -178,6 +178,20 @@
         <img class="footer__columnTwo__img" src="./images/Facebook.png" alt="Icon of Facebook"/>
       </div>
     </footer>
+    <div class="modal" id="modal">
+      <div class='modal__container'>
+          <div class="modal__content">
+              <h1 class="modal__title">Subscribe to our newsletter!</h1>
+                <p class="modal__paragraph">We send the newsletter every week on Monday.</p>
+                <div class= "form-field">
+                  <input type="text" class="modal__input" name="emailModal" id="emailModal" autocomplete="off" placeholder="Enter your email"/><br>
+                  <small></small>
+                  <button class="btn btn__modal" id="btn__modal">Subscribe</button>
+                </div>
+          </div>
+          <i id="close" class="fas fa-times"></i>
+      </div>
+    </div>
     <script src="index.js"></script>
     <script src="validation.js"></script>
   </body>

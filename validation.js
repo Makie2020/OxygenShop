@@ -1,7 +1,10 @@
 const nameEl = document.querySelector('#name');
 const emailEl = document.querySelector('#email');
 const checkboxEl = document.querySelector('#checkbox');
+const modalEl = document.querySelector('#emailModal');
 const form = document.querySelector('#btn__submit');
+const modal = document.querySelector('#btn__modal');
+
 
 const checkname = () => { 
     let valid = false;
@@ -34,8 +37,8 @@ const checkEmail = () => {
 
 const checkCheckbox = () => {
     let valid = false;
-    const checkbox = checkboxEl.checked;
-    if (!isRequired(checkbox)) {
+    const checkboxChecked = checkboxEl.checked;
+    if (!checkboxChecked) {
         showError(checkboxEl, 'Checkbox is required');
     } else {
         showSuccess(checkboxEl);
@@ -44,6 +47,20 @@ const checkCheckbox = () => {
     return valid;
 };
 
+const checkModal = () => {
+    let valid = false;
+    const modal = modalEl.value.trim();
+    if (!isRequired(modal)) {
+        showError(modalEl, 'Email cannot be blank.');
+    } else if (!isEmailValid(modal)) {
+        showError(modalEl, 'Email is not valid.')
+    } else {
+        showSuccess(modalEl);
+        modalMenu.classList.remove('show'); 
+        valid = true;
+    }
+    return valid;
+}    
 
 const isEmailValid = (email) => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -74,8 +91,7 @@ form.addEventListener('click', function (e) {
     let isnameValid = checkname(),
         isEmailValid = checkEmail(),
         isCheckboxValid = checkCheckbox();
-    let isFormValid = isnameValid && isEmailValid && isCheckboxValid; 
-    console.log(isFormValid);
+    let isFormValid = isnameValid && isEmailValid && isCheckboxValid;
     if (isFormValid) {
         fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
@@ -91,31 +107,44 @@ form.addEventListener('click', function (e) {
         .then((json) => console.log(json));
             }
 });
-
-
-const debounce = (fn, delay = 500) => {
-    let timeoutId;
-    return (...args) => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        timeoutId = setTimeout(() => {
-            fn.apply(null, args)
-        }, delay);
-    };
-};
-// 
-form.addEventListener('submit', debounce(function (e) {
-    switch (e.target.id) {
-        case 'name':
-            checkname();
-            break;
-        case 'email':
-            checkEmail();
-            break;
-        case 'checkbox':
-            checkCheckbox();
-            break;
+//modal
+modal.addEventListener('click', function (e) {
+    e.preventDefault();
+    let isEmailValid = checkModal();
+    if (isEmailValid === true) {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            email: modalEl.value.trim(),
+        }),headers: {'Content-type': 'application/json; charset=UTF-8'},
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
     }
-}));
+});
 
+const modalMenu = document.getElementById('modal');
+setTimeout(() => {
+    modalMenu.classList.add('show');
+}, 5000);
+
+window.onload = function () {
+  if (sessionStorage.getItem("modal") === "none") {
+    modalMenu.classList.remove('show')
+  }
+  document.getElementById("close").onclick = function () {
+    modalMenu.classList.remove('show');
+    sessionStorage.setItem("modal", "none");
+  };
+};
+document.addEventListener('click', (e) => {
+    let clickInside = modalMenu.contains(e.target)
+    if (!clickInside) {
+       modalMenu.classList.remove('show')
+    }
+})
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        modalMenu.classList.remove('show')
+    }
+  })
