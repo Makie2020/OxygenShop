@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OXYGENShop</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@300;400;700;800&display=swap" rel="stylesheet">
@@ -72,11 +72,16 @@
       </section>
       <section class="pricing" id="prices">
         <h2 class="pricing__title">Pricing</h2>
+        <select class="pricing__currency" id="currency" onChange=selected()>
+          <option value="1" selected>Euro</option>
+          <option value="2">Englisch Pounds</option>
+          <option value="3">US Dollar</option>
+      </select>
         <div class="pricing__div">
           <div class="pricing__card">
             <div class="pricing__card__columnOne">
               <h4 class="pricing__card__title">Basic</h4>
-              <p class="pricing__card__price pricing__card__colorbasic">$0</p>
+              <p class="pricing__card__price pricing__card__colorbasic">€0</p>
             </div>
             <div class="pricing__card__columnTwo">
               <ul class="list">
@@ -92,7 +97,7 @@
           <div class="pricing__card pricing__cardProfessional">
             <div class="pricing__card__columnOne">
               <h4 class="pricing__card__title">Professional</h4>
-              <p class="pricing__card__price pricing__card__colorprofessional">$25</p>
+              <p class="pricing__card__price pricing__card__colorprofessional">€25</p>
               <p class="pricing__card__offer">Limited offer</p>
             </div>
             <div class="pricing__card__columnTwo">
@@ -109,7 +114,7 @@
           <div class="pricing__card pricing__cardPremium">
             <div class="pricing__card__columnOne">
               <h4 class="pricing__card__title">Premium</h4>
-              <p class="pricing__card__price pricing__card__colorpremium">$60</p>
+              <p class="pricing__card__price pricing__card__colorpremium">€60</p>
               <p class="pricing__card__offer">Limited offer</p>
             </div>
             <div class="pricing__card__columnTwo">
@@ -124,6 +129,39 @@
             <button class="btn btn__beginPremium">Begin</button>
           </div>
         </div>
+      </section>
+      <section>
+        <div class="slideshow-container">
+          <div class="slides fade">
+            <img src="./images/Slider/image 1.jpg" style="width:100%">
+          </div>
+          <div class="slides fade">
+            <img src="./images/Slider/Image 2.jpg" style="width:100%">
+          </div>
+          <div class="slides fade">
+            <img src="./images/Slider/Image 3.jpg" style="width:100%">
+          </div>
+          <div class="slides fade">
+            <img src="./images/Slider/Image 4.jpg" style="width:100%">
+          </div>
+          <div class="slides fade">
+            <img src="./images/Slider/Image 5.jpg" style="width:100%">
+          </div>
+          <div class="slides fade">
+            <img src="./images/Slider/Image 6.jpg" style="width:100%">
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <br> 
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+            <span class="dot" onclick="currentSlide(6)"></span> 
+          </div>
       </section>
       <section class="question" id="contact">
         <div class="question__div">
@@ -194,5 +232,6 @@
     </div>
     <script src="index.js"></script>
     <script src="validation.js"></script>
+    <script src="slider.js"></script>
   </body>
 </html>

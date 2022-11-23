@@ -16,13 +16,13 @@ const updateScrollPercentage = function() {
     percentageVal = document.querySelector("#percentage-value")
 
   if(bodyHeight - contentScrolled <= heightOfWindow) {
-    percentage.style.width = "100%"
+    percentageVal.textContent = percentage.style.width = "100%"
   }
   else {
     const total = bodyHeight - heightOfWindow,
       got = contentScrolled,
       percent = parseInt((got/total) * 100)
-    percentage.style.width = percent + "%"
+    percentageVal.textContent = percentage.style.width = percent + "%"
   }
 }
 
@@ -39,3 +39,29 @@ backToTopButton.addEventListener('click', function () {
   }, 200)
 });
 
+// change currency
+
+function selected () {
+  let selectedCurrency = document.getElementById("currency").value;
+ 
+  switch (selectedCurrency) {
+    case "1":
+      answer = number * 0.625 ;
+      answerText.innerHTML= answer.toFixed(2);
+      answerLength.innerHTML = "miles";
+      inputLength.innerHTML = "km";
+      break;
+    case "2":
+      answer = number * 1.609344 ;
+      answerText.innerHTML= answer.toFixed(2);
+      answerLength.innerHTML = "km"
+      inputLength.innerHTML = "miles";
+      break;
+    case "3":
+      answer = number * 0.3048 ;
+      answerText.innerHTML= answer.toFixed(2);
+      answerLength.innerHTML = "meter"
+      inputLength.innerHTML = "foot";
+      break;
+  }
+}

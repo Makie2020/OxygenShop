@@ -137,8 +137,8 @@ window.onload = function () {
     sessionStorage.setItem("modal", "none");
   };
 };
-document.addEventListener('click', (e) => {
-    let clickInside = modalMenu.contains(e.target)
+document.addEventListener('click', (event) => {
+    let clickInside = modalMenu.contains(event.target)
     if (!clickInside) {
        modalMenu.classList.remove('show')
     }
