@@ -72,16 +72,18 @@
       </section>
       <section class="pricing" id="prices">
         <h2 class="pricing__title">Pricing</h2>
-        <select class="pricing__currency" id="currency" onchange="changeCurrency()">
-          <option value="1" selected>Euro</option>
-          <option value="2">Englisch Pounds</option>
-          <option value="3">US Dollar</option>
-      </select>
+        <div class="pricing__currency"> 
+          <select  class="pricing__select" id="currency" onchange="changeCurrency()">
+            <option value="1" selected>Euro</option>
+            <option value="2">Englisch Pounds</option>
+            <option value="3">US Dollar</option>
+          </select>
+        </div>
         <div class="pricing__div">
           <div class="pricing__card">
             <div class="pricing__card__columnOne">
               <h4 class="pricing__card__title">Basic</h4>
-              <p class="pricing__card__price pricing__card__colorbasic">€0</p>
+              <p class="pricing__card__price pricing__card__colorbasic"><span id="pricing__currency__Basic"></span><span id="pricing__amount__Basic"></span></p>
             </div>
             <div class="pricing__card__columnTwo">
               <ul class="list">
@@ -97,7 +99,7 @@
           <div class="pricing__card pricing__cardProfessional">
             <div class="pricing__card__columnOne">
               <h4 class="pricing__card__title">Professional</h4>
-              <p class="pricing__card__price pricing__card__colorprofessional">€25</p>
+              <p class="pricing__card__price pricing__card__colorprofessional"><span id="pricing__currency__Professional"></span><span id="pricing__amount__Professional"></span></p>
               <p class="pricing__card__offer">Limited offer</p>
             </div>
             <div class="pricing__card__columnTwo">
@@ -114,7 +116,7 @@
           <div class="pricing__card pricing__cardPremium">
             <div class="pricing__card__columnOne">
               <h4 class="pricing__card__title">Premium</h4>
-              <p class="pricing__card__price pricing__card__colorpremium">€60</p>
+              <p class="pricing__card__price pricing__card__colorpremium"><span id="pricing__currency__Premium"></span><span id="pricing__amount__Premium"></span></p>
               <p class="pricing__card__offer">Limited offer</p>
             </div>
             <div class="pricing__card__columnTwo">
@@ -201,15 +203,16 @@
                 <p class="modal__paragraph">We send the newsletter every week on Monday.</p>
                 <div class= "form-field">
                   <input type="text" class="modal__input" name="emailModal" id="emailModal" autocomplete="off" placeholder="Enter your email"/><br>
-                  <small></small>
+                  <small class="small"></small>
                   <button class="btn btn__modal" id="btn__modal">Subscribe</button>
                 </div>
           </div>
           <i id="close" class="fas fa-times"></i>
       </div>
     </div>
-    <script src="index.js"></script>
-    <script src="validation.js"></script>
-    <script src="slider.js"></script>
+    <script src="./javascript/index.js"></script>
+    <script src="./javascript/validation.js"></script>
+    <script src="./javascript/slider.js"></script>
+    <script src="./javascript/currencyChange.js"></script>
   </body>
 </html>

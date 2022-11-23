@@ -441,9 +441,14 @@ body {
   padding-bottom: 14px;
 }
 .pricing__currency {
-  border: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+}
+.pricing__select {
+  border: 1px solid;
+  color: #07ACE6;
   border-radius: 4px;
-  text-align: end;
+  margin-right: 40px;
 }
 .pricing__card {
   border: 1px solid #FB3B64;
@@ -529,11 +534,11 @@ body {
   }
 }
 .list__checkbox {
-  list-style-image: url(./images/Checkbox.png);
+  list-style-image: url(/images/Checkbox.png);
   padding-bottom: 20px;
 }
 .list__cross {
-  list-style-image: url(./images/Cross.png);
+  list-style-image: url(/images/Cross.png);
   padding-bottom: 20px;
 }
 
@@ -684,8 +689,8 @@ body {
 
 .modal {
   display: none;
-  max-width: 700px;
-  width: 85%;
+  max-width: 75%;
+  max-height: 320px;
   position: fixed;
   top: 50%;
   background-color: rgba(0, 0, 0, 0.3);
@@ -697,6 +702,7 @@ body {
 .modal__title {
   font-size: 35px;
   margin-bottom: 10px;
+  padding-top: 30px;
 }
 .modal__paragraph {
   margin-bottom: 5%;
@@ -740,6 +746,10 @@ body {
     text-align: left;
   }
 }
+.small {
+  height: 20px;
+}
+
 .slider {
   text-align: center;
 }
