@@ -44,7 +44,7 @@ backToTopButton.addEventListener('click', function () {
 function selected () {
   let selectedCurrency = document.getElementById("currency").value;
  
-  switch (selectedCurrency) {
+  switch (selectedValueLength) {
     case "1":
       answer = number * 0.625 ;
       answerText.innerHTML= answer.toFixed(2);
