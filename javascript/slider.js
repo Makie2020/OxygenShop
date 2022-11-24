@@ -19,12 +19,14 @@ class slider{
           console.log(this.index);
       }
       this.previous.onclick = () => {
-        if (this.index < 1){
-            this.index = 5;
-        }
         document.getElementById("slider__image").src = this.slide[this.index];
+        console.log(this.slide[this.index]);
+        if (this.index < 1){
+            this.index = 6;
+        }
         this.index--;
-        console.log(this.index);
+        console.log(this.slide[this.index]);
+        console.log(this.index)
     }
   }
 };

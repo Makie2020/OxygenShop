@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   </head>
   <body>
-    <div id="scroll-percent" data-scrollPercentage><div class="percentage">&nbsp;</div></div>
+    <div class="scrolling-bar">
+      <div class="scrolling" id="scrolling"></div>
+      <div id="scroll"></div>
+    </div>
     <nav class="nav">
       <h2 class="nav__title">OXYGENShop</h2> 
       <a id="menu-icon" class="nav__icon" onclick="buttonClick()">
@@ -203,7 +206,7 @@
                 <p class="modal__paragraph">We send the newsletter every week on Monday.</p>
                 <div class= "form-field">
                   <input type="text" class="modal__input" name="emailModal" id="emailModal" autocomplete="off" placeholder="Enter your email"/><br>
-                  <small class="small"></small>
+                  <small class="small">s</small>
                   <button class="btn btn__modal" id="btn__modal">Subscribe</button>
                 </div>
           </div>

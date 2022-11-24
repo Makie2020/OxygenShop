@@ -18,22 +18,20 @@ body {
    font-style: $font-style;
 }
 
-#scroll-percent {
+.scrolling-bar {
    position: fixed;
-   top: 0;
-   width: 100vw;
-   color: #000;
-   margin: 0;
-   padding: 0;
+   z-index: 2;
+   width: 100%;
    background-color: white;
-}
+ }
+ .scrolling {
+   text-align: right;
+   width: 0;
+   height: 6px;
+   background-color: #08A6E4;
+   box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+ }
 
-[data-scrollPercentage] .percentage {
-  display: inline-block;
-  background-color: #08A6E4;
-  height: 6px;
-     width: 0;
-}
 @media screen and (max-width: 999px){
    .line{
       display: none;
@@ -712,6 +710,7 @@ body {
 .form-field small {
    color: #dc3545;
 }
+
 // modal
 .modal {
    display: none;
@@ -772,9 +771,7 @@ body {
        text-align: left;
    }
 }
-.small{
-   height: 20px;
-}
+
 // slider
 .slider {
    text-align: center;
@@ -805,3 +802,13 @@ body {
    to {opacity: 1}
  }
  
+ @media only screen and (max-width: 999px) {
+   .slider {
+      margin-top: 5%;
+   }
+   .pricing{
+      &__select {
+         margin-bottom: 5%;
+      }
+   }
+}

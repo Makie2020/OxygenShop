@@ -85,7 +85,7 @@ const showSuccess = (input) => {
     const error = formField.querySelector('small');
     error.textContent = '';
 }
-
+// form validation
 form.addEventListener('click', function (e) {
     e.preventDefault();
     let isnameValid = checkname(),
@@ -107,7 +107,7 @@ form.addEventListener('click', function (e) {
         .then((json) => console.log(json));
             }
 });
-//modal
+//modal email validation
 modal.addEventListener('click', function (e) {
     e.preventDefault();
     let isEmailValid = checkModal();
@@ -123,28 +123,68 @@ modal.addEventListener('click', function (e) {
     }
 });
 
+// modal Opening after 5 sec.
 const modalMenu = document.getElementById('modal');
 setTimeout(() => {
     modalMenu.classList.add('show');
+    document.body.style.overflow = "hidden"; 
+    document.body.style.height = "100%";
 }, 5000);
 
 window.onload = function () {
   if (sessionStorage.getItem("modal") === "none") {
-    modalMenu.classList.remove('show')
-  }
-  document.getElementById("close").onclick = function () {
     modalMenu.classList.remove('show');
+  }
+}; 
+// closing Modal with close Button
+document.getElementById("close").onclick = function () {
+    modalMenu.classList.remove('show');
+    document.body.style.overflow = "auto";
+    document.body.style.height = "auto";
     sessionStorage.setItem("modal", "none");
   };
-};
+  
+// cloding Modal click outside Modal
 document.addEventListener('click', (event) => {
     let clickInside = modalMenu.contains(event.target)
     if (!clickInside) {
        modalMenu.classList.remove('show')
+       document.body.style.overflow = "auto";
+       document.body.style.height = "auto";
     }
 })
+
+// closing Modal ESC 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         modalMenu.classList.remove('show')
+        document.body.style.overflow = "auto";
+        document.body.style.height = "auto";
     }
   })
+
+ // scroll Eventlistiner 
+document.addEventListener('scroll', function(){
+if (percent == 25 && sessionStorage.getItem("modal") != "none") {
+    modalMenu.classList.add('show');
+    document.body.style.overflow = "hidden"; 
+    document.body.style.height = "100%";
+    sessionStorage.setItem("modal", "none");
+}
+}); 
+
+let bodyelement = document.documentElement;
+let body = document.body;
+let scrollTop = 'scrollTop';
+let scrollHeight = 'scrollHeight';
+let percent = Math.floor((bodyelement[scrollTop]||body[scrollTop]) / ((bodyelement[scrollHeight]||body[scrollHeight]) - bodyelement.clientHeight) * 100);
+
+
+  //  Scroll Percentage Bar 
+
+document.addEventListener('scroll', function(){
+    let scrollingBar = document.getElementById('scrolling');
+    let percent = Math.floor((bodyelement[scrollTop]||body[scrollTop]) / ((bodyelement[scrollHeight]||body[scrollHeight]) - bodyelement.clientHeight) * 100);
+    scrollingBar.style.width = percent + '%';
+});
+//
