@@ -197,6 +197,7 @@ body {
   width: 150px;
   height: 50px;
   display: block;
+  cursor: pointer;
 }
 .btn__openShop {
   background: #08A6E4;
@@ -687,7 +688,7 @@ body {
 
 .modal {
   display: none;
-  max-width: 75%;
+  max-width: 60%;
   max-height: 320px;
   position: fixed;
   top: 50%;
@@ -723,7 +724,6 @@ body {
 }
 
 #close {
-  cursor: pointer;
   color: black;
   position: absolute;
   top: 0;
