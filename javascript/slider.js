@@ -1,12 +1,12 @@
 class slider {
   constructor() {
     this.slide = [
-      "./images/Slider/image1.jpg",
-      "./images/Slider/image2.jpg",
-      "./images/Slider/image3.jpg",
-      "./images/Slider/image4.jpg",
-      "./images/Slider/image5.jpg",
-      "./images/Slider/image6.jpg",];
+      ".images/Slider/image1.jpg",
+      ".images/Slider/image2.jpg",
+      ".images/Slider/image3.jpg",
+      ".images/Slider/image4.jpg",
+      ".images/Slider/image5.jpg",
+      ".images/Slider/image6.jpg",];
     this.next = document.getElementById('next');
     this.previous = document.getElementById('previous');
     this.index = 0;
