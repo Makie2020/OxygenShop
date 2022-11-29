@@ -555,11 +555,11 @@ body {
 }   
 .list {
    &__checkbox {
-      list-style-image: url(/images/checkbox.png);
+      list-style-image: url(./images/checkbox.png);
       padding-bottom: 20px;
    }
    &__cross {
-      list-style-image: url(/images/cross.png);
+      list-style-image: url(./images/cross.png);
       padding-bottom: 20px;
    }
 }
