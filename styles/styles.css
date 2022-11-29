@@ -533,11 +533,11 @@ body {
   }
 }
 .list__checkbox {
-  list-style-image: url(/images/Checkbox.png);
+  list-style-image: url(../images/Checkbox.png.png);
   padding-bottom: 20px;
 }
 .list__cross {
-  list-style-image: url(/images/Cross.png);
+  list-style-image: url(../images/Cross.png.png);
   padding-bottom: 20px;
 }
 
