@@ -48,7 +48,6 @@ body {
 }
 .nav {
   padding: 1.3rem;
-  position: -webkit-sticky;
   position: sticky;
   top: 6px;
   line-height: 37px;
@@ -456,6 +455,10 @@ body {
   min-height: 100px;
   font-weight: 700;
 }
+.pricing__card :hover {
+  background: rgb(241, 241, 233);
+  color: black;
+}
 .pricing__card__title {
   font-size: 20px;
   line-height: 24px;
@@ -765,19 +768,8 @@ body {
 }
 
 .fade {
-  -webkit-animation-name: fade;
-          animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 @keyframes fade {
